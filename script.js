@@ -8,7 +8,6 @@ const calculateBtn = document.getElementById('btn-calculate');
 let data = [];
 
 // getRandomUser();
-// getRandomUser();
 getRandomUser();
 getRandomUser();
 getRandomUser();
@@ -37,8 +36,15 @@ function doubleMoney() {
   updateDOM();
 }
 
+// sort by richest
 function sortByRichest() {
   data.sort((a, b) => b.money - a.money);
+  updateDOM();
+}
+
+// filter only millionaires
+function showMillionaires() {
+  data = data.filter(user => user.money > 1000000);
   updateDOM();
 }
 
@@ -70,3 +76,4 @@ function formatMoney(number) {
 addBtn.addEventListener('click', getRandomUser);
 doubleBtn.addEventListener('click', doubleMoney);
 sortBtn.addEventListener('click', sortByRichest);
+showBtn.addEventListener('click', showMillionaires);
