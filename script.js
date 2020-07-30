@@ -1,6 +1,6 @@
 const main = document.getElementById('main');
 const addBtn = document.getElementById('btn-add');
-const doubleBtn = document.getElementById('btn-show');
+const doubleBtn = document.getElementById('btn-double');
 const showBtn = document.getElementById('btn-show');
 const sortBtn = document.getElementById('btn-sort');
 const calculateBtn = document.getElementById('btn-calculate');
@@ -14,7 +14,6 @@ getRandomUser();
 getRandomUser();
 
 // fetch random user and add money
-
 async function getRandomUser() {
   const res = await fetch('https://randomuser.me/api');
   const data = await res.json();
@@ -28,6 +27,16 @@ async function getRandomUser() {
 
   addData(newUser);
 }
+
+
+// double money
+function doubleMoney() {
+  data = data.map(user => {
+    return { ...user, money: user.money * 2 };
+  });
+  updateDOM();
+}
+
 
 function addData(obj) {
   data.push(obj);
@@ -54,3 +63,4 @@ function formatMoney(number) {
 
 // event listeners
 addBtn.addEventListener('click', getRandomUser);
+doubleBtn.addEventListener('click', doubleMoney);
