@@ -1,9 +1,9 @@
 const main = document.getElementById('main');
 const addBtn = document.getElementById('btn-add');
-const DoubleBtn = document.getElementById('btn-show');
-const ShowBtn = document.getElementById('btn-show');
-const SortBtn = document.getElementById('btn-sort');
-const CalculateBtn = document.getElementById('btn-calculate');
+const doubleBtn = document.getElementById('btn-show');
+const showBtn = document.getElementById('btn-show');
+const sortBtn = document.getElementById('btn-sort');
+const calculateBtn = document.getElementById('btn-calculate');
 
 let data = [];
 
